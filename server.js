@@ -20,7 +20,8 @@ app.get('/messages', (req, res) => {
 });
 
 app.post('/messages', (req, res) => {
-    messages.push(req.body);
+    messages.push('message', req.body);
+    io.emit(req.body);
     res.sendStatus(200);
 });
 

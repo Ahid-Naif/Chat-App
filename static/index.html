@@ -39,6 +39,7 @@
                 });
                 getMessages();
             });
+            socket.on('message', (message) => addMessages(message));
 
             function addMessages(message) {
                 $('#messages').append(`<h4> ${message.name} </h4> <p> ${message.message}</p>`);
