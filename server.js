@@ -1,6 +1,10 @@
 const bodyParser = require('body-parser');
 const express    = require('express');
-const app        = express();
+const socketio   = require('socket.io');
+
+const app    = express();
+const server = app.listen(3010);
+const io     = socketio(server);
 
 app.use(express.static('static'));
 app.use(bodyParser.json());
@@ -20,4 +24,6 @@ app.post('/messages', (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(3010);
+io.on('connection', (socket) => {
+    console.log("User is connected");
+});
