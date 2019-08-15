@@ -28,7 +28,11 @@
         </div>
 
         <script>
-        
+            function getMessages() {
+                $.get('http://localhost:3010/messages', (data) => {
+                    console.log(data);
+                });
+            }
         </script>
     </body>
 </html>
