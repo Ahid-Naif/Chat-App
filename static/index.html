@@ -46,13 +46,14 @@
             }
 
             function getMessages() {
-                $.get('http://localhost:3010/messages', (data) => {
+                // $.get('http://localhost:3010/messages', (data) => {
+                    $.get('https://sleepy-coast-67090.herokuapp.com/messages', (data) => {
                     data.forEach(addMessages);
                 });
             }
 
             function postMessages(message) {
-                $.post('http://localhost:3010/messages', message);
+                $.post('https://sleepy-coast-67090.herokuapp.com/messages', message);
             }
         </script>
     </body>

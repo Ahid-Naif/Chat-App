@@ -3,8 +3,10 @@ const express    = require('express');
 const socketio   = require('socket.io');
 const mongoose   = require('mongoose');
 
+const port = process.env.PORT || 5000;
+
 const app    = express();
-const server = app.listen(3010);
+const server = app.listen(port);
 const io     = socketio(server);
 
 const connectionString = 'mongodb+srv://ahid:Uhi]khdtuhvtrhu,]123@chatapp-lt5m7.mongodb.net/test?retryWrites=true&w=majority';
